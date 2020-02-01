@@ -62,6 +62,8 @@
 
   <script>
       const box = document.querySelector('.box');
+      // when we use the arrow function, we inherit the value of 'this' from the parents scope, here is the windows object.
+      // so we use the normal function, that is bound to the box through the addEventListener
       box.addEventListener('click', function() {
         let first = 'opening';
         let second = 'open';
@@ -72,9 +74,13 @@
         }
 
         this.classList.toggle(first);
+        // here if we use a function within a function without bounding 'this' to anything, it will be the window object
+        // in the old times developer bounded self = this and then using self on the inner function
+        // by using arrow function, we inherit the value of 'this' from the parent function, that is the box.
         setTimeout(() => {
           this.classList.toggle(second);
         }, 250);
+        // learn: we use regular function() {} on the top level and arrow functions inside
       });
   </script>
 
