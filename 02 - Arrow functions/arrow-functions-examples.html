@@ -10,7 +10,10 @@
 const race = '100m Dash';
 const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
 
+// using implicit return: add parenthesis to indicate you want to return an object literal
+// when property and value are the same (race:race) you can write only race (es6 feature)
 const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+// you can use console.table(win) to see avoid opening each object on the console  
 
 const ages = [23,62,45,234,2,62,234,62,34];
 
